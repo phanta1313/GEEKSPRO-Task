@@ -1,3 +1,18 @@
 <html>
-{}
+{% if page == 'showtasks' %}
+<h1>Tasks List:</h1>
+{% for task in tasks %}
+<p>Title: {{task.title}}</p>
+<p>Description: {{task.description}}</p>
+{% endfor %}
+{% elif page == 'showtask' %}
+{% elif page == 'createtask' %}
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit">
+</form>
+{% elif page == 'edittask' %}
+{% elif page == 'deletetask' %}
+{% endif %}
 </html>
